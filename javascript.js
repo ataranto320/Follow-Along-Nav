@@ -3,7 +3,13 @@ const background = document.querySelector(".dropdownBackground");
 const nav = document.querySelector(".top");
 
 function handleEnter() {
-    console.log("enter");
+    // console.log("enter");
+    this.classList.add("trigger-enter");
+    setTimeout(() => this.classList.add("trigger-enter-active"), 150);
+    // setTimeout(function() {
+    //     console.log(this);
+    //     this.classList.add("trigger-enter-active");
+    // }, 150);
 }
 
 function handleLeave() {
