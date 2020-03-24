@@ -6,14 +6,15 @@ function handleEnter() {
     // console.log("enter");
     this.classList.add("trigger-enter");
     // setTimeout(() => this.classList.add("trigger-enter-active"), 150);
-    setTimeout(() => {
-    // fixes rushed actions hovering over tabs
-        if (this.classList.conatins("trigger-enter")) {
-            this.classList.add("trigger-enter-active")
-        }
-     }, 150);
-     // or 
-    //  setTimeout(() => this.classList.contains("trigger-enter") && this.classList.add("trigger-enter-active"), 150);
+    // or
+    // setTimeout(() => {
+    // // fixes rushed actions hovering over tabs
+    //     if (this.classList.conatins("trigger-enter")) {
+    //         this.classList.add("trigger-enter-active")
+    //     }
+    //  }, 150);
+    // or 
+    setTimeout(() => this.classList.contains("trigger-enter") && this.classList.add("trigger-enter-active"), 150);
     background.classList.add("open");
     // setTimeout(function() {
     //     console.log(this);
@@ -44,4 +45,4 @@ function handleLeave() {
 }
 
 triggers.forEach(trigger => trigger.addEventListener("mouseenter", handleEnter));
-triggers.forEach(trigger => trigger.addEventListener("mouselease", handleLeave));
+triggers.forEach(trigger => trigger.addEventListener("mouseleave", handleLeave));
