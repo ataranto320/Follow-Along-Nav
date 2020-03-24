@@ -11,6 +11,22 @@ function handleEnter() {
     //     console.log(this);
     //     this.classList.add("trigger-enter-active");
     // }, 150);
+    const dropdown = this.querySelector(".dropdown");
+    // console.log(dropdown);
+    const dropdownCoords = dropdown.getBoundingClientRect();
+    // console.log(dropdownCoords);
+    const navCoords = nav.getBoundingClientRect();
+    // console.log(navCoords);
+    const coords = {
+        height: dropdownCoords.height,
+        width: dropdownCoords.width,
+        top: dropdownCoords.top - navCoords.top,
+        left: dropdownCoords.left - navCoords.left
+    };
+
+    background.style.setProperty("width", `${coords.width}px`);
+    background.style.setProperty("height", `${coords.height}px`);
+    background.style.setProperty("transform", `translate(${coords.left}px, ${coords.top}px)`);
 }
 
 function handleLeave() {
