@@ -5,7 +5,15 @@ const nav = document.querySelector(".top");
 function handleEnter() {
     // console.log("enter");
     this.classList.add("trigger-enter");
-    setTimeout(() => this.classList.add("trigger-enter-active"), 150);
+    // setTimeout(() => this.classList.add("trigger-enter-active"), 150);
+    setTimeout(() => {
+    // fixes rushed actions hovering over tabs
+        if (this.classList.conatins("trigger-enter")) {
+            this.classList.add("trigger-enter-active")
+        }
+     }, 150);
+     // or 
+    //  setTimeout(() => this.classList.contains("trigger-enter") && this.classList.add("trigger-enter-active"), 150);
     background.classList.add("open");
     // setTimeout(function() {
     //     console.log(this);
